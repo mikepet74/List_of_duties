@@ -31,7 +31,7 @@ int main()
 			printf("---> ");
 		}
 		queries(query, &customerList, fp);
-	} while (strcmp(query, "quit")!=0);
+	} while (strstr(query, "quit") == NULL);
 
 	//Closing a file and freeing memory
 	fclose(fp);

@@ -453,7 +453,7 @@ void sortList(manager* customerList, int sortingIndex)
 char* divisionIntoFields(char* nameOfField, char* line, int flag)
 {
 	char* token;
-	if (findSubStr(line, nameOfField) == NO_SUB_STR_fOUND)
+	if (strstr(line, nameOfField) == NULL)
 	{
 
 		printf("The customer was not added to the list because \"%s\" field was not entered\n\n", nameOfField);
@@ -461,14 +461,10 @@ char* divisionIntoFields(char* nameOfField, char* line, int flag)
 	}
 	else
 	{
-		line += findSubStr(line, nameOfField) + 1;
-		if (findSubStr(line, nameOfField) != NO_SUB_STR_fOUND)
-		{
-			return NULL;
-		}
-		line = loweringSpace(line);
+		line = strstr(line, nameOfField);
+		line += strlen(nameOfField);
+		line = strstr(line, "=");
 		line++;
-		line = loweringSpace(line);
 		token = strtok(line, ",");
 		if (!token)
 		{
@@ -476,6 +472,7 @@ char* divisionIntoFields(char* nameOfField, char* line, int flag)
 			return NULL;
 		}
 		removesSpaceFromEnd(token);
+		token = loweringSpace(token);
 	}
 	if (flag == 1)
 	{
