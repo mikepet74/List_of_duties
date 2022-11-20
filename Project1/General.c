@@ -2,10 +2,10 @@
 
 int findSubStr(char* str, char* subStr)
 {
-	int i, j;
-	for (i = 0;i < strlen(str);i++)
+	int i, j, lenStr = strlen(str), lenSubStr = strlen(subStr);
+	for (i = 0;i < lenStr;i++)
 	{
-		for (j = 0;j < strlen(subStr);j++)
+		for (j = 0;j < lenSubStr;j++)
 		{
 			if (str[i + j] != subStr[j]) {
 				j = -1;
@@ -22,12 +22,12 @@ int findSubStr(char* str, char* subStr)
 
 char* toLowerStr(char* str)
 {
-	int i;
-	for (i = 0;i < strlen(str);i++)
+	int i, lenStr = strlen(str);
+	for (i = 0;i < lenStr;i++)
 	{
-		if (str[i] > 64 && str[i] < 91)
+		if (isupper(str[i]))
 		{
-			str[i] = str[i] + 32;
+			str[i] = tolower(str[i]);
 		}
 	}
 	return str;
@@ -35,19 +35,19 @@ char* toLowerStr(char* str)
 
 int checkStr(char* str)
 {
-	int i;
-	for (i = 0;i < strlen(str);i++)
-		if ((str[i] < 97 || str[i] > 122) && (str[i] != ' '))
+	int i, lenStr = strlen(str);
+	for (i = 0;i < lenStr;i++)
+		if (islower(str[i]) == 0 && (str[i] != ' '))
 			return 0;
 	return 1;
 }
 
 int checkInt(char* str)
 {
-	int i;
-	for (i = 0;i < strlen(str);i++)
+	int i, lenStr = strlen(str);
+	for (i = 0;i < lenStr;i++)
 	{
-		if (str[i] < 48 || str[i] > 58)
+		if (isdigit(str[i]) == 0)
 		{
 			return 0;
 		}
@@ -86,10 +86,17 @@ void printError(client* custmer)
 
 char* loweringSpace(char* str)
 {
+	int spaceCounter = 0, i;
 	while (*str == ' ')
 	{
-		str++;
+		spaceCounter++;
 	}
+
+	for (i = 0;str[i+spaceCounter]!='\0';i++)
+	{
+		str[i] = str[i + spaceCounter];
+	}
+	str[i] = 0;
 	return str;
 }
 

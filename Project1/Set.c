@@ -472,7 +472,6 @@ char* divisionIntoFields(char* nameOfField, char* line, int flag)
 			return NULL;
 		}
 		removesSpaceFromEnd(token);
-		token = loweringSpace(token);
 	}
 	if (flag == 1)
 	{

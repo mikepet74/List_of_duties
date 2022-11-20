@@ -134,5 +134,4 @@ void selectIDNumber(char* line, manager* customerList);
 //-------------------------------------------------------------------------------------------------------------------------------------
 void selectPhoneNumber(char* line, manager* customerList);
 
-
 #endif // !1

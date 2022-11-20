@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #define CHUNK 10
 #define NO_SUB_STR_fOUND -1
 /*The _strdup function appears in the program, in Linux the function must be written without an underscore, thus strdup*/

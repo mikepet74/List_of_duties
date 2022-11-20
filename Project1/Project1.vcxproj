@@ -129,13 +129,14 @@
   <ItemGroup>
     <ClCompile Include="General.c" />
     <ClCompile Include="Main.c" />
+    <ClCompile Include="Management.c" />
     <ClCompile Include="Select.c" />
     <ClCompile Include="Set.c" />
-    <ClCompile Include="Source.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="General.h" />
     <ClInclude Include="Main.h" />
+    <ClInclude Include="Management.h" />
     <ClInclude Include="Select.h" />
     <ClInclude Include="Set.h" />
   </ItemGroup>
