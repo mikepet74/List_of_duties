@@ -1,25 +1,5 @@
 #include "General.h"
 
-int findSubStr(char* str, char* subStr)
-{
-	int i, j, lenStr = strlen(str), lenSubStr = strlen(subStr);
-	for (i = 0;i < lenStr;i++)
-	{
-		for (j = 0;j < lenSubStr;j++)
-		{
-			if (str[i + j] != subStr[j]) {
-				j = -1;
-				break;
-			}
-		}
-		if (j != -1)
-		{
-			return i + j - 1;
-		}
-	}
-	return NO_SUB_STR_fOUND;
-}
-
 char* toLowerStr(char* str)
 {
 	int i, lenStr = strlen(str);
@@ -60,25 +40,25 @@ void printError(client* custmer)
 	switch (custmer->error[0])
 	{
 	case 1:
-		printf(" Error in first name <-->   ");
+		fputs(" Error in first name <-->   ", stdout);
 		break;
 	case 2:
-		printf(" Error in second name <-->  ");
+		fputs(" Error in second name <-->  ", stdout);
 		break;
 	case 3:
-		printf(" Error in ID number <-->    ");
+		fputs(" Error in ID number <-->    ", stdout);
 		break;
 	case 4:
-		printf(" Error in phone number <--> ");
+		fputs(" Error in phone number <--> ", stdout);
 		break;
 	case 5:
-		printf(" Error in debt <--> \t");
+		fputs(" Error in debt <--> \t", stdout);
 		break;
 	case 6:
-		printf(" Error in date <--> \t");
+		fputs(" Error in date <--> \t", stdout);
 		break;
 	case 7:
-		printf(" ID and name don't match <--> ");
+		fputs(" ID and name don't match <--> ", stdout);
 	default:
 		break;
 	}
@@ -86,10 +66,11 @@ void printError(client* custmer)
 
 char* loweringSpace(char* str)
 {
-	int spaceCounter = 0, i;
-	while (*str == ' ')
+	int spaceCounter = 0, i=0;
+	while (str[i] == ' ')
 	{
 		spaceCounter++;
+		i++;
 	}
 
 	for (i = 0;str[i+spaceCounter]!='\0';i++)
@@ -120,7 +101,7 @@ void removesSpaceFromEnd(char* str)
 
 void printErrorMessage()
 {
-	printf("The system had an error receiving the data, please try again: ");
+	fputs("The system had an error receiving the data, please try again: ", stdout);
 }
 
 void putErrorInTheStruct(client* custmer, int errorLocation)
@@ -131,9 +112,9 @@ void putErrorInTheStruct(client* custmer, int errorLocation)
 
 void printTitleTable()
 {
-	printf("\n\n\t|====================|================|=================|=================|============|============|");
-	printf("\n\t|    |  first name   |   second name  |    ID number    |   phone number  |     debt   |    date    |\n");
-	printf("\t|====================|================|=================|=================|============|============|\n");
+	puts("\n\n\t|====================|================|=================|=================|============|============|");
+	puts("\t|    |  first name   |   second name  |    ID number    |   phone number  |     debt   |    date    |");
+	puts("\t|====================|================|=================|=================|============|============|");
 
 }
 

@@ -13,8 +13,8 @@ FILE* openFile(FILE* filePointer, char* nameOfFile)
 				free(nameOfFile);
 			}
 
-			printf("The file for reading is not opened\n");
-			printf("Enter a file name to read: ");
+			puts("The file for reading is not opened");
+			fputs("Enter a file name to read: ", stdout);
 
 			while ((nameOfFile = readLine(read)) == NULL)//A loop to receive another file name
 			{
@@ -94,7 +94,7 @@ client* creatingClient(char* line)
 
 	if (temporaryClientStructure == NULL)
 	{
-		printf("The system failed to allocate memory for the client");
+		fputs("The system failed to allocate memory for the client", stdout);
 	}
 	else
 	{
@@ -250,7 +250,7 @@ void printList(manager customerList)
 		{
 			if (normalCustomers > 0)
 			{
-				printf("\t|--------------------|----------------|-----------------|-----------------|------------|------------|\n");
+				puts("\t|--------------------|----------------|-----------------|-----------------|------------|------------|");
 			}
 			normalCustomers++;
 			print(customer, normalCustomers);
@@ -258,7 +258,7 @@ void printList(manager customerList)
 		customer = customer->next;
 	}
 
-	printf("\t|====================|================|=================|=================|============|============|\n");
+	puts("\t|====================|================|=================|=================|============|============|");
 
 	if (normalCustomers == customerList.amountCustomers)
 	{
@@ -267,7 +267,7 @@ void printList(manager customerList)
 
 	else
 	{
-		printf("\nCustomers with incorrect fields:\n");
+		puts("\nCustomers with incorrect fields:");
 		customer = customerList.head;
 		while (customer != NULL)//A loop that prints out the invalid customers.
 		{
@@ -281,7 +281,7 @@ void printList(manager customerList)
 		}
 
 		printf("\n  Normal customers: %d, abnormal customers: %d, total customers: %d.\n\n", normalCustomers, customerError, normalCustomers + customerError);
-		printf("********************************************************************\n\n");
+		puts("********************************************************************\n");
 	}
 }
 
@@ -316,12 +316,12 @@ void queries(char* query, manager* customerList, FILE* filePointer)
 		}
 		else if (strcmp(token, "quit")!=0)
 		{
-			printf("The query failed, a valid keyword was not entered, please try again\n\n");
+			puts("The query failed, a valid keyword was not entered, please try again\n");
 		}
 	}
 	else
 	{
-		printf("The query failed, a valid keyword was not entered, please try again\n\n");
+		puts("The query failed, a valid keyword was not entered, please try again\n");
 	}
 }
 

@@ -61,22 +61,6 @@ typedef struct manager {//manager structure
 void printErrorMessage();
 
 //-------------------------------------------------------------------------------------------------------------------------------------
-// findSubStr
-//-----------
-//
-// General : A function that searches for a substring within a main string
-// the function returns the position where the substring ends in the main string.
-//
-// Parameters :
-// str - a variable that contains the primary string
-// subStr - The substring we're looking for
-//
-// Return Value : The index at which the substring ends
-//
-//-------------------------------------------------------------------------------------------------------------------------------------
-int findSubStr(char* str, char* subStr);
-
-//-------------------------------------------------------------------------------------------------------------------------------------
 // toLowerStr
 //-----------
 //

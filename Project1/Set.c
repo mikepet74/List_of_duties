@@ -13,7 +13,7 @@ void setQuery(char* line, manager* customerList, FILE* filePointer)
 	if (existingCustomerNumber == CUSTOMER_NUMBER_NOT_EXIST)
 	{
 		addNewCustomer(customerList, newClient);
-		printf("The customer has been successfully added to the customer list\n\n");
+		puts("The customer has been successfully added to the customer list\n");
 	}
 	else
 	{
@@ -25,13 +25,13 @@ void setQuery(char* line, manager* customerList, FILE* filePointer)
 		if ((strcmp(clientTemp->firstName, newClient->firstName)!=0) || (strcmp(clientTemp->lastName, newClient->lastName)!=0))
 		{
 			freeStruct(newClient);
-			printf("Adding the person was not successful, the id already exists with other data\n\n");
+			puts("Adding the person was not successful, the id already exists with other data\n");
 			return;
 		}
 		else
 		{
 			clientMerger(customerList, newClient, existingCustomerNumber);
-			printf("The debt was successfully merged with an existing customer\n\n");
+			puts("The debt was successfully merged with an existing customer\n");
 		}
 	}
 }
@@ -44,7 +44,7 @@ client* setNewCustomer(char* line)
 	client* customer = (client*)malloc(sizeof(client));
 	if (customer == NULL)
 	{
-		printf("The system failed to allocate memory for the structure\n\n");
+		puts("The system failed to allocate memory for the structure\n");
 		return customer;
 	}
 	for (i = 0;i < 7;i++)
@@ -180,7 +180,7 @@ client* setNewCustomer(char* line)
 	date = atoi(token);
 	if (date < 1 || date>31)
 	{
-		printf("The customer was not added to the list because the number of days must be greater than 0 and less than 32\n\n");
+		puts("The customer was not added to the list because the number of days must be greater than 0 and less than 32\n");
 		free(saveToFree);
 		free(customer->phoneNumber);
 		free(customer->IDNumber);
@@ -198,7 +198,7 @@ client* setNewCustomer(char* line)
 	}
 	else
 	{
-		printf("The customer was not added to the list because The months must contain only digits\n\n");
+		puts("The customer was not added to the list because The months must contain only digits\n");
 		free(saveToFree);
 		free(customer->phoneNumber);
 		free(customer->IDNumber);
@@ -209,7 +209,7 @@ client* setNewCustomer(char* line)
 	}
 	if (date < 1 || date>12)
 	{
-		printf("The customer was not added to the list because the number of month must be greater than 0 and less than 13\n\n");
+		puts("The customer was not added to the list because the number of month must be greater than 0 and less than 13\n");
 		free(saveToFree);
 		free(customer->phoneNumber);
 		free(customer->IDNumber);
@@ -228,7 +228,7 @@ client* setNewCustomer(char* line)
 	}
 	else
 	{
-		printf("The customer was not added to the list because The months must contain only digits\n\n");
+		puts("The customer was not added to the list because The months must contain only digits\n");
 		free(saveToFree);
 		free(customer->phoneNumber);
 		free(customer->IDNumber);
@@ -239,7 +239,7 @@ client* setNewCustomer(char* line)
 	}
 	if (date < 0)
 	{
-		printf("The customer was not added to the list because the number of month must be greater than 0\n\n");
+		puts("The customer was not added to the list because the number of month must be greater than 0\n");
 		free(saveToFree);
 		free(customer->phoneNumber);
 		free(customer->IDNumber);
@@ -274,7 +274,7 @@ client* setNewCustomer(char* line)
 	}
 	if (!atof(token) && strcmp(token, "0")!=0)
 	{
-		printf("The customer was not added to the customer list because the debt format is incorrect\n\n");
+		puts("The customer was not added to the customer list because the debt format is incorrect\n");
 		free(saveToFree);
 		free(customer->phoneNumber);
 		free(customer->IDNumber);
@@ -285,7 +285,7 @@ client* setNewCustomer(char* line)
 	}
 	if (!checkDebt(token))
 	{
-		printf("The debt format is incorrect\n\n");
+		puts("The debt format is incorrect\n");
 		free(saveToFree);
 		free(customer->phoneNumber);
 		free(customer->IDNumber);
