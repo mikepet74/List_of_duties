@@ -10,7 +10,7 @@ int compareLastName(client* customer, void* query)
 }
 int compareDebt(client* customer, void* query)
 {
-	return customer->debt - *(float*)query;
+	return (int)(customer->debt - *(float*)query);
 }
 int compareIDNumber(client* customer, void* query)
 {
@@ -22,10 +22,13 @@ int comparePhoneNumber(client* customer, void* query)
 }
 int comperDate(client* customer, void* query)
 {
-	float day, month, year;
-	day = atof(strtok((char*)query, "/"));
-	month = atof(strtok(NULL, "/"));
-	year = atof(strtok(NULL, "/"));
+	char* date = (char*)malloc(11 * sizeof(char));
+	date = strcpy(date, (char*)query);
+	int day, month, year;
+	day = atoi(strtok(date, "/"));
+	month = atoi(strtok(NULL, "/"));
+	year = atoi(strtok(NULL, "/"));
+	free(date);
 	if (customer->dateOfOperation.year - year)
 	{
 		return customer->dateOfOperation.year - year;
@@ -113,9 +116,9 @@ int printSelect(int (*compare)(client*, void*), char* query, int parameter, mana
 
 void selectionQuery(char* line, manager* customerList)
 {
-	int (*ComparePtrArr[])(client*, void*) = { compareFirstName ,compareLastName ,compareDebt ,compareIDNumber ,comparePhoneNumber };
+	int (*ComparePtrArr[])(client*, void*) = { compareFirstName ,compareLastName ,compareDebt ,compareIDNumber ,comparePhoneNumber, comperDate };
 	char* query = NULL;
-	int check, i, j;
+	int i, j;
 	char* field[] = { "first name", "second name", "debt", "id", "phone", "date" };
 	char* parameter[] = { ">", "<", "!=", "=" };
 	char* param;

@@ -2,8 +2,8 @@
 
 char* toLowerStr(char* str)
 {
-	int i, lenStr = strlen(str);
-	for (i = 0;i < lenStr;i++)
+	int i;
+	for (i = 0;str[i]!='\0';i++)
 	{
 		if (isupper(str[i]))
 		{
@@ -15,8 +15,8 @@ char* toLowerStr(char* str)
 
 int checkStr(char* str)
 {
-	int i, lenStr = strlen(str);
-	for (i = 0;i < lenStr;i++)
+	int i;
+	for (i = 0;str[i]!='\0';i++)
 		if (islower(str[i]) == 0 && (str[i] != ' '))
 			return 0;
 	return 1;
@@ -24,8 +24,8 @@ int checkStr(char* str)
 
 int checkInt(char* str)
 {
-	int i, lenStr = strlen(str);
-	for (i = 0;i < lenStr;i++)
+	int i;
+	for (i = 0;str[i]!='\0';i++)
 	{
 		if (isdigit(str[i]) == 0)
 		{
@@ -84,7 +84,7 @@ char* loweringSpace(char* str)
 int checkDebt(char* debt)
 {
 	int i;
-	for (i = 0;i < strlen(debt);i++)
+	for (i = 0;debt[i]!='\0';i++)
 		if (!((debt[i] > 47 && debt[i] < 58) || (debt[i] == '-') || (debt[i] == '.')))
 			return 0;
 	return 1;
