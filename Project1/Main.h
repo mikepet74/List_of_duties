@@ -13,8 +13,8 @@
 //---------
 //
 // General : The function opens a file
-// It receives a file type pointer, a string of the file nameand and the flag to check if we have done dynamic memory allocation (in case the file is not found, and we requested a new name for the file)
-// The function opens the blockand returns the pointer to the file.
+// It receives a file type pointer, a string of the file name and and the flag to check if we have done dynamic memory allocation (in case the file is not found, and we requested a new name for the file)
+// The function opens the block and returns the pointer to the file.
 //
 // Parameters :
 // filePointer - FILE type pointer
@@ -49,7 +49,7 @@ client* creatingClient(char* line);
 //
 // General : A function that reads from the file in a loop line by line
 // sends to another function each row that returns a client structure
-// the function checks if the client existsand then sends it to merge
+// the function checks if the client exists and then sends it to merge
 // otherwise, the phone operation adds him to the customer list.
 //
 // Parameters :
@@ -81,7 +81,7 @@ void printList(manager customerList);
 //----------------
 //
 // General : The function accepts a customer list manager structure
-// goes through the customers in a loopand sends them one by one to release.
+// goes through the customers in a loop and sends them one by one to release.
 //
 // Parameters :
 // customerList - A manager structure of a customer list that must be released

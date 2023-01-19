@@ -35,9 +35,9 @@ int checkInt(char* str)
 	return 1;
 }
 
-void printError(client* custmer)
+void printError(client* customer)
 {
-	switch (custmer->error[0])
+	switch (customer->error[0])
 	{
 	case 1:
 		fputs(" Error in first name <-->   ", stdout);
@@ -104,10 +104,10 @@ void printErrorMessage()
 	fputs("The system had an error receiving the data, please try again: ", stdout);
 }
 
-void putErrorInTheStruct(client* custmer, int errorLocation)
+void putErrorInTheStruct(client* customer, int errorLocation)
 {
-	custmer->error[0] = errorLocation;
-	custmer->error[errorLocation] = 1;
+	customer->error[0] = errorLocation;
+	customer->error[errorLocation] = 1;
 }
 
 void printTitleTable()

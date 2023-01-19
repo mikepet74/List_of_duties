@@ -13,7 +13,7 @@ int main()
 	printList(customerList);
 
 	//Printing instructions:
-	puts("\t\t\tOPERATING INSRUCTIONS:\n\t\t\t---------------------");
+	puts("\t\t\tOPERATING INSTRUCTIONS:\n\t\t\t---------------------");
 	puts("\t1. To print all customers, enter \"print\".");
 	puts("\t2. To enter a new customer:\n\t\tenter \"set\"\n\tand then the field names\n\t\t(first name, second name, id, phone, debt and date)");
 	puts("\t\tand then the content\n\t\texample: set first name = plony, second name = almony, id = 123456789, phone = 0540000000, debt = -23, date = 1 / 1 / 2000");

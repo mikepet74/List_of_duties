@@ -15,7 +15,7 @@
 // General : Print query function
 // the function accepts the query
 // and a list of customers whose names she searches for according to the query
-// the function checks according to which field the client is looking forand accordingly sends to the appropriate function.
+// the function checks according to which field the client is looking for and accordingly sends to the appropriate function.
 //
 // Parameters :
 // line - a variable containing the user's query

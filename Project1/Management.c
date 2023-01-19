@@ -135,7 +135,7 @@ client* creatingClient(char* line)
 			return NULL;
 		}
 
-		//ID munber:
+		//ID number:
 		token = strtok(NULL, ",");
 		if (!checkInt(token) || strlen(token) != 9)//Checking that the Id contains only digits and is the correct size
 		{
@@ -153,7 +153,7 @@ client* creatingClient(char* line)
 
 		//phone number:
 		token = strtok(NULL, ",");
-		if (!checkInt(token) || strlen(token) != 10)//Checking that the phone contains only digitsand is the correct size
+		if (!checkInt(token) || strlen(token) != 10)//Checking that the phone contains only digits and is the correct size
 		{
 			putErrorInTheStruct(temporaryClientStructure, 4);
 		}

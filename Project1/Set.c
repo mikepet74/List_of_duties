@@ -303,14 +303,14 @@ client* setNewCustomer(char* line)
 	return customer;
 }
 
-void addToFile(client* custmor, FILE* filePointer)
+void addToFile(client* customer, FILE* filePointer)
 {
-	fprintf(filePointer, "%s,", custmor->firstName);
-	fprintf(filePointer, "%s,", custmor->lastName);
-	fprintf(filePointer, "%s,", custmor->IDNumber);
-	fprintf(filePointer, "%s,", custmor->phoneNumber);
-	fprintf(filePointer, "%.2f,", custmor->debt);
-	fprintf(filePointer, "%02d/%02d/%04d\n", custmor->dateOfOperation.day, custmor->dateOfOperation.month, custmor->dateOfOperation.year);
+	fprintf(filePointer, "%s,", customer->firstName);
+	fprintf(filePointer, "%s,", customer->lastName);
+	fprintf(filePointer, "%s,", customer->IDNumber);
+	fprintf(filePointer, "%s,", customer->phoneNumber);
+	fprintf(filePointer, "%.2f,", customer->debt);
+	fprintf(filePointer, "%02d/%02d/%04d\n", customer->dateOfOperation.day, customer->dateOfOperation.month, customer->dateOfOperation.year);
 }
 
 int checkingClientExists(client clientTemp, manager* listOfClient)

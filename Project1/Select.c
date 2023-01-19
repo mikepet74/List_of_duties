@@ -20,7 +20,7 @@ int comparePhoneNumber(client* customer, void* query)
 {
 	return strcmp(customer->phoneNumber, (char*)query);
 }
-int comperDate(client* customer, void* query)
+int compareDate(client* customer, void* query)
 {
 	char* date = (char*)malloc(11 * sizeof(char));
 	date = strcpy(date, (char*)query);
@@ -116,7 +116,7 @@ int printSelect(int (*compare)(client*, void*), char* query, int parameter, mana
 
 void selectionQuery(char* line, manager* customerList)
 {
-	int (*ComparePtrArr[])(client*, void*) = { compareFirstName ,compareLastName ,compareDebt ,compareIDNumber ,comparePhoneNumber, comperDate };
+	int (*ComparePtrArr[])(client*, void*) = { compareFirstName ,compareLastName ,compareDebt ,compareIDNumber ,comparePhoneNumber, compareDate };
 	char* query = NULL;
 	int i, j;
 	char* field[] = { "first name", "second name", "debt", "id", "phone", "date" };

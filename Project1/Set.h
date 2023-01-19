@@ -71,13 +71,13 @@ int checkingClientExists(client clientTemp, manager* listOfClient);
 // and prints the client as a new line to the file.
 //
 // Parameters :
-// custmor - a client structure that needs to be added to the file
+// customer - a client structure that needs to be added to the file
 // filePointer - a pointer to a file for printing
 //
 // Return Value : None
 //
 //-------------------------------------------------------------------------------------------------------------------------------------
-void addToFile(client* custmor, FILE* filePointer);
+void addToFile(client* customer, FILE* filePointer);
 
 //-------------------------------------------------------------------------------------------------------------------------------------
 // addNewCustomer
@@ -100,7 +100,7 @@ void addNewCustomer(manager* customerList, client* clientAdd);
 //-------------
 //
 // General : The function incorporates a client structure if it already exists in the system
-// the function receives the customer listand the customer that needs to be combinedand the index of the existing customer in the customer list
+// the function receives the customer list and the customer that needs to be combined and the index of the existing customer in the customer list
 // the function keeps the later date between them.
 //
 // Parameters :
@@ -118,7 +118,7 @@ void clientMerger(manager* customerList, client* clientAdd, int index);
 //---------
 //
 // General : The function receives a certain index from the customer list that needs to be sorted after the merger
-// the function goes through the customer listand moves the customer to his new location.
+// the function goes through the customer list and moves the customer to his new location.
 //
 // Parameters :
 // customerList - manager structure of customer list

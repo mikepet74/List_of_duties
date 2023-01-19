@@ -110,19 +110,19 @@ int checkInt(char* str);
 // General : The function receives a client structure and prints which line has an error.
 //
 // Parameters :
-// custmer - client structure with the error
+// customer - client structure with the error
 //
 // Return Value : None
 //
 //-------------------------------------------------------------------------------------------------------------------------------------
-void printError(client* custmer);
+void printError(client* customer);
 
 //-------------------------------------------------------------------------------------------------------------------------------------
 // loweringSpace
 //--------------
 //
 // General : The function accepts a string
-// the function goes through the charactersand removes the space from the beginning of the string.
+// the function goes through the characters and removes the space from the beginning of the string.
 //
 // Parameters :
 // str - The string that needs to be de-spaced
@@ -137,7 +137,7 @@ char* loweringSpace(char* str);
 //--------------------
 //
 // General : The function accepts a string
-// the function goes through the charactersand removes the space from the end of string.
+// the function goes through the characters and removes the space from the end of string.
 //
 // Parameters :
 // str - The string that needs to be de-spaced
@@ -155,13 +155,13 @@ void removesSpaceFromEnd(char* str);
 // the function puts the error in the array of the client's errors.
 //
 // Parameters :
-// custmer - a client structure where the error should be put
+// customer - a client structure where the error should be put
 // errorLocation - the index where the error should be put
 //
 // Return Value : None
 //
 //-------------------------------------------------------------------------------------------------------------------------------------
-void putErrorInTheStruct(client* custmer, int errorLocation);
+void putErrorInTheStruct(client* customer, int errorLocation);
 
 //-------------------------------------------------------------------------------------------------------------------------------------
 // printTitleTable
@@ -201,12 +201,12 @@ void print(client* customer, int customerNumber);
 // then releases the structure itself.
 //
 // Parameters :
-// custmer - A client structure that must be freed
+// customer - A client structure that must be freed
 //
 // Return Value : None
 //
 //-------------------------------------------------------------------------------------------------------------------------------------
-void freeStruct(client* custmer);
+void freeStruct(client* customer);
 
 int checkDebt(char* debt);
 
